@@ -1,3 +1,3 @@
-const aux = ({ children }) => children;
+const Aux = ({ children }) => children;
 
-export default aux;
+export default Aux;
