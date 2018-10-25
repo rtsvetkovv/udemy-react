@@ -1,17 +1,33 @@
-import React, { Component } from "react";
+import React, { Component, createRef } from "react";
+
+import { array, func } from "prop-types";
 
 import Person from "./Person/Person";
 
 class Persons extends Component {
+  static propTypes = {
+    persons: array,
+    clicked: func.isRequired,
+    changed: func.isRequired
+  };
+
+  lastPersonRef = createRef();
+
+  componentDidMount() {
+    this.lastPersonRef.current.focus();
+  }
+
   render() {
     const { persons, clicked, changed } = this.props;
     return persons.map((person, index) => {
       return (
         <Person
-          click={() => clicked(index)}
-          name={person.name}
           age={person.age}
           key={index}
+          ref={this.lastPersonRef}
+          click={() => clicked(index)}
+          name={person.name}
+          position={index}
           changed={event => changed(event, person.id)}
         />
       );

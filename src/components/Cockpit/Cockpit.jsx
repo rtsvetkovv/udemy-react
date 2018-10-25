@@ -1,5 +1,7 @@
 import React from "react";
 
+import { array, bool, func } from "prop-types";
+
 import Aux from "../../hoc/_Aux";
 
 import classes from "./Cockpit.css";
@@ -28,6 +30,12 @@ const Cockpit = ({ persons, showPersons, clicked }) => {
       </button>
     </Aux>
   );
+};
+
+Cockpit.propTypes = {
+  persons: array,
+  showPersons: bool,
+  clicked: func.isRequired
 };
 
 export default Cockpit;
