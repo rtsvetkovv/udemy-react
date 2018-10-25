@@ -6,7 +6,7 @@ import Aux from "../../hoc/_Aux";
 
 import classes from "./Cockpit.css";
 
-const Cockpit = ({ persons, showPersons, clicked }) => {
+const Cockpit = ({ persons, showPersons, clicked, login }) => {
   let btnClass = classes.Button;
 
   if (showPersons) {
@@ -28,6 +28,7 @@ const Cockpit = ({ persons, showPersons, clicked }) => {
       <button className={btnClass} onClick={clicked}>
         Toggle Persons
       </button>
+      <button onClick={login}>Log in</button>
     </Aux>
   );
 };

@@ -2,6 +2,8 @@ import React, { Component, createRef } from "react";
 
 import { func, string, number, node } from "prop-types";
 
+import { AuthContext } from "../../../containers/App";
+
 import classes from "./Person.css";
 import withClass from "../../../hoc/withClass";
 import Aux from "../../../hoc/_Aux";
@@ -30,6 +32,11 @@ class Person extends Component {
     const { name, age, children, changed, click } = this.props;
     return (
       <Aux>
+        <AuthContext.Consumer>
+          {auth => {
+            return auth ? <p>Im authenticated</p> : null;
+          }}
+        </AuthContext.Consumer>
         <p onClick={click}>
           I'm {name} and I am {age} years old!
         </p>
