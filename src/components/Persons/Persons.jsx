@@ -1,10 +1,10 @@
-import React, { Component, createRef } from "react";
+import React, { PureComponent, createRef } from "react";
 
 import { array, func } from "prop-types";
 
 import Person from "./Person/Person";
 
-class Persons extends Component {
+class Persons extends PureComponent {
   static propTypes = {
     persons: array,
     clicked: func.isRequired,

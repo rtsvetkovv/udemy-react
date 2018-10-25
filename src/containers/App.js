@@ -58,18 +58,18 @@ class App extends Component {
     this.setState({ authenticated: true });
   };
 
-  static getDerivedStateFromProps(nextProps, prevState) {
-    console.log(
-      "[UPDATE App.js] inside getDerivedStateFromProps",
-      nextProps,
-      prevState
-    );
-    return prevState;
-  }
+  // static getDerivedStateFromProps(nextProps, prevState) {
+  //   console.log(
+  //     "[UPDATE App.js] inside getDerivedStateFromProps",
+  //     nextProps,
+  //     prevState
+  //   );
+  //   return prevState;
+  // }
 
-  getSnapshotBeforeUpdate() {
-    console.log("[UPDATE App.js] inside getSnapshotBeforeUpdate");
-  }
+  // getSnapshotBeforeUpdate() {
+  //   console.log("[UPDATE App.js] inside getSnapshotBeforeUpdate");
+  // }
 
   render() {
     let persons = null;
